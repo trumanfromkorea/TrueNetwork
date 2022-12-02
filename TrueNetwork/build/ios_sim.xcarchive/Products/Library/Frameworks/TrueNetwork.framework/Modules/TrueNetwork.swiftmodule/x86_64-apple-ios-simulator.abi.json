@@ -1,0 +1,1118 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "TopLevel",
+    "printedName": "TopLevel",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "TrueNetwork",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "Method",
+        "printedName": "Method",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "get",
+            "printedName": "get",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(TrueNetwork.Method.Type) -> TrueNetwork.Method",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Method",
+                    "printedName": "TrueNetwork.Method",
+                    "usr": "s:11TrueNetwork6MethodO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "TrueNetwork.Method.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Method",
+                        "printedName": "TrueNetwork.Method",
+                        "usr": "s:11TrueNetwork6MethodO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:11TrueNetwork6MethodO3getyA2CmF",
+            "mangledName": "$s11TrueNetwork6MethodO3getyA2CmF",
+            "moduleName": "TrueNetwork"
+          },
+          {
+            "kind": "Var",
+            "name": "post",
+            "printedName": "post",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(TrueNetwork.Method.Type) -> TrueNetwork.Method",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Method",
+                    "printedName": "TrueNetwork.Method",
+                    "usr": "s:11TrueNetwork6MethodO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "TrueNetwork.Method.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Method",
+                        "printedName": "TrueNetwork.Method",
+                        "usr": "s:11TrueNetwork6MethodO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:11TrueNetwork6MethodO4postyA2CmF",
+            "mangledName": "$s11TrueNetwork6MethodO4postyA2CmF",
+            "moduleName": "TrueNetwork"
+          },
+          {
+            "kind": "Var",
+            "name": "delete",
+            "printedName": "delete",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(TrueNetwork.Method.Type) -> TrueNetwork.Method",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Method",
+                    "printedName": "TrueNetwork.Method",
+                    "usr": "s:11TrueNetwork6MethodO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "TrueNetwork.Method.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Method",
+                        "printedName": "TrueNetwork.Method",
+                        "usr": "s:11TrueNetwork6MethodO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:11TrueNetwork6MethodO6deleteyA2CmF",
+            "mangledName": "$s11TrueNetwork6MethodO6deleteyA2CmF",
+            "moduleName": "TrueNetwork"
+          },
+          {
+            "kind": "Var",
+            "name": "label",
+            "printedName": "label",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11TrueNetwork6MethodO5labelSSvp",
+            "mangledName": "$s11TrueNetwork6MethodO5labelSSvp",
+            "moduleName": "TrueNetwork",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11TrueNetwork6MethodO5labelSSvg",
+                "mangledName": "$s11TrueNetwork6MethodO5labelSSvg",
+                "moduleName": "TrueNetwork",
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "==",
+            "printedName": "==(_:_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Method",
+                "printedName": "TrueNetwork.Method",
+                "usr": "s:11TrueNetwork6MethodO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Method",
+                "printedName": "TrueNetwork.Method",
+                "usr": "s:11TrueNetwork6MethodO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11TrueNetwork6MethodO2eeoiySbAC_ACtFZ",
+            "mangledName": "$s11TrueNetwork6MethodO2eeoiySbAC_ACtFZ",
+            "moduleName": "TrueNetwork",
+            "static": true,
+            "implicit": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Var",
+            "name": "hashValue",
+            "printedName": "hashValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11TrueNetwork6MethodO9hashValueSivp",
+            "mangledName": "$s11TrueNetwork6MethodO9hashValueSivp",
+            "moduleName": "TrueNetwork",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11TrueNetwork6MethodO9hashValueSivg",
+                "mangledName": "$s11TrueNetwork6MethodO9hashValueSivg",
+                "moduleName": "TrueNetwork",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "hash",
+            "printedName": "hash(into:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Hasher",
+                "printedName": "Swift.Hasher",
+                "paramValueOwnership": "InOut",
+                "usr": "s:s6HasherV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11TrueNetwork6MethodO4hash4intoys6HasherVz_tF",
+            "mangledName": "$s11TrueNetwork6MethodO4hash4intoys6HasherVz_tF",
+            "moduleName": "TrueNetwork",
+            "implicit": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:11TrueNetwork6MethodO",
+        "mangledName": "$s11TrueNetwork6MethodO",
+        "moduleName": "TrueNetwork",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "TrueNetwork",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "NetworkManager",
+        "printedName": "NetworkManager",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "shared",
+            "printedName": "shared",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "NetworkManager",
+                "printedName": "TrueNetwork.NetworkManager",
+                "usr": "s:11TrueNetwork0B7ManagerC"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11TrueNetwork0B7ManagerC6sharedACvpZ",
+            "mangledName": "$s11TrueNetwork0B7ManagerC6sharedACvpZ",
+            "moduleName": "TrueNetwork",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NetworkManager",
+                    "printedName": "TrueNetwork.NetworkManager",
+                    "usr": "s:11TrueNetwork0B7ManagerC"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11TrueNetwork0B7ManagerC6sharedACvgZ",
+                "mangledName": "$s11TrueNetwork0B7ManagerC6sharedACvgZ",
+                "moduleName": "TrueNetwork",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "request",
+            "printedName": "request(endpoint:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "API",
+                "printedName": "TrueNetwork.API",
+                "usr": "s:11TrueNetwork3APIP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "((Swift.Result<Foundation.Data, TrueNetwork.NetworkError>) -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Swift.Result<Foundation.Data, TrueNetwork.NetworkError>) -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Result",
+                        "printedName": "Swift.Result<Foundation.Data, TrueNetwork.NetworkError>",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Data",
+                            "printedName": "Foundation.Data",
+                            "usr": "s:10Foundation4DataV"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "NetworkError",
+                            "printedName": "TrueNetwork.NetworkError",
+                            "usr": "s:11TrueNetwork0B5ErrorO"
+                          }
+                        ],
+                        "usr": "s:s6ResultO"
+                      }
+                    ]
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11TrueNetwork0B7ManagerC7request8endpoint10completionyAA3API_p_ys6ResultOy10Foundation4DataVAA0B5ErrorOGcSgtF",
+            "mangledName": "$s11TrueNetwork0B7ManagerC7request8endpoint10completionyAA3API_p_ys6ResultOy10Foundation4DataVAA0B5ErrorOGcSgtF",
+            "moduleName": "TrueNetwork",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:11TrueNetwork0B7ManagerC",
+        "mangledName": "$s11TrueNetwork0B7ManagerC",
+        "moduleName": "TrueNetwork",
+        "declAttributes": [
+          "Final",
+          "AccessControl"
+        ],
+        "hasMissingDesignatedInitializers": true
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "TrueNetwork",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "API",
+        "printedName": "API",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "method",
+            "printedName": "method",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Method",
+                "printedName": "TrueNetwork.Method",
+                "usr": "s:11TrueNetwork6MethodO"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11TrueNetwork3APIP6methodAA6MethodOvp",
+            "mangledName": "$s11TrueNetwork3APIP6methodAA6MethodOvp",
+            "moduleName": "TrueNetwork",
+            "protocolReq": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Method",
+                    "printedName": "TrueNetwork.Method",
+                    "usr": "s:11TrueNetwork6MethodO"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11TrueNetwork3APIP6methodAA6MethodOvg",
+                "mangledName": "$s11TrueNetwork3APIP6methodAA6MethodOvg",
+                "moduleName": "TrueNetwork",
+                "genericSig": "<τ_0_0 where τ_0_0 : TrueNetwork.API>",
+                "sugared_genericSig": "<Self where Self : TrueNetwork.API>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "baseUrl",
+            "printedName": "baseUrl",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11TrueNetwork3APIP7baseUrlSSvp",
+            "mangledName": "$s11TrueNetwork3APIP7baseUrlSSvp",
+            "moduleName": "TrueNetwork",
+            "protocolReq": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11TrueNetwork3APIP7baseUrlSSvg",
+                "mangledName": "$s11TrueNetwork3APIP7baseUrlSSvg",
+                "moduleName": "TrueNetwork",
+                "genericSig": "<τ_0_0 where τ_0_0 : TrueNetwork.API>",
+                "sugared_genericSig": "<Self where Self : TrueNetwork.API>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "paths",
+            "printedName": "paths",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11TrueNetwork3APIP5pathsSaySSGvp",
+            "mangledName": "$s11TrueNetwork3APIP5pathsSaySSGvp",
+            "moduleName": "TrueNetwork",
+            "protocolReq": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[Swift.String]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11TrueNetwork3APIP5pathsSaySSGvg",
+                "mangledName": "$s11TrueNetwork3APIP5pathsSaySSGvg",
+                "moduleName": "TrueNetwork",
+                "genericSig": "<τ_0_0 where τ_0_0 : TrueNetwork.API>",
+                "sugared_genericSig": "<Self where Self : TrueNetwork.API>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "parameters",
+            "printedName": "parameters",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[Swift.String : Any]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : Any]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ProtocolComposition",
+                        "printedName": "Any"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11TrueNetwork3APIP10parametersSDySSypGSgvp",
+            "mangledName": "$s11TrueNetwork3APIP10parametersSDySSypGSgvp",
+            "moduleName": "TrueNetwork",
+            "protocolReq": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "[Swift.String : Any]?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Dictionary",
+                        "printedName": "[Swift.String : Any]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "ProtocolComposition",
+                            "printedName": "Any"
+                          }
+                        ],
+                        "usr": "s:SD"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11TrueNetwork3APIP10parametersSDySSypGSgvg",
+                "mangledName": "$s11TrueNetwork3APIP10parametersSDySSypGSgvg",
+                "moduleName": "TrueNetwork",
+                "genericSig": "<τ_0_0 where τ_0_0 : TrueNetwork.API>",
+                "sugared_genericSig": "<Self where Self : TrueNetwork.API>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "body",
+            "printedName": "body",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[Swift.String : Any]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : Any]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ProtocolComposition",
+                        "printedName": "Any"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11TrueNetwork3APIP4bodySDySSypGSgvp",
+            "mangledName": "$s11TrueNetwork3APIP4bodySDySSypGSgvp",
+            "moduleName": "TrueNetwork",
+            "protocolReq": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "[Swift.String : Any]?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Dictionary",
+                        "printedName": "[Swift.String : Any]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "ProtocolComposition",
+                            "printedName": "Any"
+                          }
+                        ],
+                        "usr": "s:SD"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11TrueNetwork3APIP4bodySDySSypGSgvg",
+                "mangledName": "$s11TrueNetwork3APIP4bodySDySSypGSgvg",
+                "moduleName": "TrueNetwork",
+                "genericSig": "<τ_0_0 where τ_0_0 : TrueNetwork.API>",
+                "sugared_genericSig": "<Self where Self : TrueNetwork.API>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "headers",
+            "printedName": "headers",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[Swift.String : Swift.String]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : Swift.String]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11TrueNetwork3APIP7headersSDyS2SGSgvp",
+            "mangledName": "$s11TrueNetwork3APIP7headersSDyS2SGSgvp",
+            "moduleName": "TrueNetwork",
+            "protocolReq": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "[Swift.String : Swift.String]?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Dictionary",
+                        "printedName": "[Swift.String : Swift.String]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          }
+                        ],
+                        "usr": "s:SD"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11TrueNetwork3APIP7headersSDyS2SGSgvg",
+                "mangledName": "$s11TrueNetwork3APIP7headersSDyS2SGSgvg",
+                "moduleName": "TrueNetwork",
+                "genericSig": "<τ_0_0 where τ_0_0 : TrueNetwork.API>",
+                "sugared_genericSig": "<Self where Self : TrueNetwork.API>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:11TrueNetwork3APIP",
+        "mangledName": "$s11TrueNetwork3APIP",
+        "moduleName": "TrueNetwork",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "TrueNetwork",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "NetworkError",
+        "printedName": "NetworkError",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "invalidRequest",
+            "printedName": "invalidRequest",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(TrueNetwork.NetworkError.Type) -> TrueNetwork.NetworkError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NetworkError",
+                    "printedName": "TrueNetwork.NetworkError",
+                    "usr": "s:11TrueNetwork0B5ErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "TrueNetwork.NetworkError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "NetworkError",
+                        "printedName": "TrueNetwork.NetworkError",
+                        "usr": "s:11TrueNetwork0B5ErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:11TrueNetwork0B5ErrorO14invalidRequestyA2CmF",
+            "mangledName": "$s11TrueNetwork0B5ErrorO14invalidRequestyA2CmF",
+            "moduleName": "TrueNetwork"
+          },
+          {
+            "kind": "Var",
+            "name": "invalidResponse",
+            "printedName": "invalidResponse",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(TrueNetwork.NetworkError.Type) -> TrueNetwork.NetworkError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NetworkError",
+                    "printedName": "TrueNetwork.NetworkError",
+                    "usr": "s:11TrueNetwork0B5ErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "TrueNetwork.NetworkError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "NetworkError",
+                        "printedName": "TrueNetwork.NetworkError",
+                        "usr": "s:11TrueNetwork0B5ErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:11TrueNetwork0B5ErrorO15invalidResponseyA2CmF",
+            "mangledName": "$s11TrueNetwork0B5ErrorO15invalidResponseyA2CmF",
+            "moduleName": "TrueNetwork"
+          },
+          {
+            "kind": "Var",
+            "name": "statusCode",
+            "printedName": "statusCode",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(TrueNetwork.NetworkError.Type) -> (Swift.Int) -> TrueNetwork.NetworkError",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Swift.Int) -> TrueNetwork.NetworkError",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "NetworkError",
+                        "printedName": "TrueNetwork.NetworkError",
+                        "usr": "s:11TrueNetwork0B5ErrorO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(code: Swift.Int)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Int",
+                            "printedName": "Swift.Int",
+                            "usr": "s:Si"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "TrueNetwork.NetworkError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "NetworkError",
+                        "printedName": "TrueNetwork.NetworkError",
+                        "usr": "s:11TrueNetwork0B5ErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:11TrueNetwork0B5ErrorO10statusCodeyACSi_tcACmF",
+            "mangledName": "$s11TrueNetwork0B5ErrorO10statusCodeyACSi_tcACmF",
+            "moduleName": "TrueNetwork"
+          },
+          {
+            "kind": "Var",
+            "name": "invalidData",
+            "printedName": "invalidData",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(TrueNetwork.NetworkError.Type) -> TrueNetwork.NetworkError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NetworkError",
+                    "printedName": "TrueNetwork.NetworkError",
+                    "usr": "s:11TrueNetwork0B5ErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "TrueNetwork.NetworkError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "NetworkError",
+                        "printedName": "TrueNetwork.NetworkError",
+                        "usr": "s:11TrueNetwork0B5ErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:11TrueNetwork0B5ErrorO11invalidDatayA2CmF",
+            "mangledName": "$s11TrueNetwork0B5ErrorO11invalidDatayA2CmF",
+            "moduleName": "TrueNetwork"
+          },
+          {
+            "kind": "Var",
+            "name": "errorDescription",
+            "printedName": "errorDescription",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11TrueNetwork0B5ErrorO16errorDescriptionSSvp",
+            "mangledName": "$s11TrueNetwork0B5ErrorO16errorDescriptionSSvp",
+            "moduleName": "TrueNetwork",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11TrueNetwork0B5ErrorO16errorDescriptionSSvg",
+                "mangledName": "$s11TrueNetwork0B5ErrorO16errorDescriptionSSvg",
+                "moduleName": "TrueNetwork",
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:11TrueNetwork0B5ErrorO",
+        "mangledName": "$s11TrueNetwork0B5ErrorO",
+        "moduleName": "TrueNetwork",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "LocalizedError",
+            "printedName": "LocalizedError",
+            "usr": "s:10Foundation14LocalizedErrorP",
+            "mangledName": "$s10Foundation14LocalizedErrorP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Error",
+            "printedName": "Error",
+            "usr": "s:s5ErrorP",
+            "mangledName": "$ss5ErrorP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          }
+        ]
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": []
+}
