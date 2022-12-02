@@ -12,12 +12,16 @@ public enum Method {
     case get
     case post
     case delete
+    case patch
+    case put
 
     public var label: String {
         switch self {
         case .get: return "GET"
         case .post: return "POST"
         case .delete: return "DELETE"
+        case .patch: return "PATCH"
+        case .put: return "PUT"
         }
     }
 }

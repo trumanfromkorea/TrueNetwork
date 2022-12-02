@@ -22,18 +22,20 @@ public final class NetworkManager {
         // Request 전송
         let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
             // error, statusCode 검사
-            let statusCode = (response as? HTTPURLResponse)?.statusCode
+            guard let statusCode = (response as? HTTPURLResponse)?.statusCode else {
+                completion?(.failure(.networkFailed))
+                return
+            }
 
             guard error == nil,
-                  let statusCode = statusCode,
                   (200 ..< 300).contains(statusCode) else {
-                completion?(.failure(.statusCode(code: statusCode ?? 0)))
+                completion?(.failure(NetworkError.judgeStatus(by: statusCode)))
                 return
             }
 
             // response data 검사
             guard let resultData = data else {
-                completion?(.failure(.invalidResponse))
+                completion?(.failure(.invalidData))
                 return
             }
 

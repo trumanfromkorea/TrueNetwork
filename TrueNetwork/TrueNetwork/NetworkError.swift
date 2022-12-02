@@ -12,8 +12,8 @@ public enum NetworkError: LocalizedError {
     case invalidRequest
     case invalidResponse
     case invalidData
-
-    case statusCode(code: Int)
+    case serverError
+    case networkFailed
 
     public var errorDescription: String {
         switch self {
@@ -23,8 +23,20 @@ public enum NetworkError: LocalizedError {
             return "유효하지 않은 데이터 응답입니다."
         case .invalidData:
             return "유효하지 않은 데이터입니다."
-        case let .statusCode(code):
-            return "Status Code: \(code)"
+        case .serverError:
+            return "서버 내부 에러입니다."
+        case .networkFailed:
+            return "네트워크 통신에 실패했습니다."
+        }
+    }
+
+    static func judgeStatus(by statusCode: Int) -> NetworkError {
+        if (400 ..< 500).contains(statusCode) {
+            return .invalidRequest
+        } else if (500 ..< 600).contains(statusCode) {
+            return .serverError
+        } else {
+            return .networkFailed
         }
     }
 }
