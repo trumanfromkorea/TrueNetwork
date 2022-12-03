@@ -22,10 +22,12 @@ public final class NetworkManager {
         // Request 전송
         let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
             // error, statusCode 검사
-            guard let statusCode = (response as? HTTPURLResponse)?.statusCode else {
-                completion?(.failure(.networkFailed))
+            guard let httpResponse = (response as? HTTPURLResponse) else {
+                completion?(.failure(.invalidResponse))
                 return
             }
+
+            let statusCode = httpResponse.statusCode
 
             guard error == nil,
                   (200 ..< 300).contains(statusCode) else {
@@ -47,22 +49,12 @@ public final class NetworkManager {
 
     // Request 생성
     private func generateRequest(endpoint: API) -> URLRequest? {
-        // url + paths
-        let urlString = endpoint.baseUrl + endpoint.paths.reduce("", { partialResult, path in
-            partialResult + "/\(path)"
-        })
-
-        // parameters
-        guard var urlComponents = URLComponents(string: urlString) else {
+        guard var urlComponents = URLComponents(string: endpoint.baseUrl) else {
             return nil
         }
 
-        endpoint.parameters?.forEach({ key, value in
-            let query = URLQueryItem(name: key, value: "\(value)")
-
-            if urlComponents.queryItems == nil { urlComponents.queryItems = [] }
-            urlComponents.queryItems?.append(query)
-        })
+        urlComponents.addPaths(endpoint.paths)
+        urlComponents.addParameters(endpoint.parameters)
 
         guard let url = urlComponents.url else {
             return nil

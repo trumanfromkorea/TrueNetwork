@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0DDE958B293B91B900B41AE7 /* URLComponents+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDE958A293B91B900B41AE7 /* URLComponents+.swift */; };
 		0DECC41D28FDAB8100FD3D78 /* TrueNetwork.docc in Sources */ = {isa = PBXBuildFile; fileRef = 0DECC41C28FDAB8100FD3D78 /* TrueNetwork.docc */; };
 		0DECC42328FDAB8100FD3D78 /* TrueNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DECC41828FDAB8100FD3D78 /* TrueNetwork.framework */; };
 		0DECC42828FDAB8100FD3D78 /* TrueNetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DECC42728FDAB8100FD3D78 /* TrueNetworkTests.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0DDE958A293B91B900B41AE7 /* URLComponents+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLComponents+.swift"; sourceTree = "<group>"; };
 		0DECC41828FDAB8100FD3D78 /* TrueNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TrueNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DECC41B28FDAB8100FD3D78 /* TrueNetwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrueNetwork.h; sourceTree = "<group>"; };
 		0DECC41C28FDAB8100FD3D78 /* TrueNetwork.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = TrueNetwork.docc; sourceTree = "<group>"; };
@@ -58,6 +60,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0DDE9587293B90A400B41AE7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0DDE958A293B91B900B41AE7 /* URLComponents+.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		0DECC40E28FDAB8100FD3D78 = {
 			isa = PBXGroup;
 			children = (
@@ -79,12 +89,13 @@
 		0DECC41A28FDAB8100FD3D78 /* TrueNetwork */ = {
 			isa = PBXGroup;
 			children = (
-				0DECC41B28FDAB8100FD3D78 /* TrueNetwork.h */,
 				0DECC41C28FDAB8100FD3D78 /* TrueNetwork.docc */,
-				0DECC43428FDACB900FD3D78 /* NetworkManager.swift */,
+				0DECC41B28FDAB8100FD3D78 /* TrueNetwork.h */,
 				0DECC43828FDACF800FD3D78 /* API.swift */,
-				0DECC43C28FDAD2B00FD3D78 /* NetworkError.swift */,
 				0DECC43A28FDAD0300FD3D78 /* Method.swift */,
+				0DECC43C28FDAD2B00FD3D78 /* NetworkError.swift */,
+				0DECC43428FDACB900FD3D78 /* NetworkManager.swift */,
+				0DDE9587293B90A400B41AE7 /* Extensions */,
 			);
 			path = TrueNetwork;
 			sourceTree = "<group>";
@@ -209,6 +220,7 @@
 				0DECC43B28FDAD0300FD3D78 /* Method.swift in Sources */,
 				0DECC43528FDACB900FD3D78 /* NetworkManager.swift in Sources */,
 				0DECC43928FDACF800FD3D78 /* API.swift in Sources */,
+				0DDE958B293B91B900B41AE7 /* URLComponents+.swift in Sources */,
 				0DECC41D28FDAB8100FD3D78 /* TrueNetwork.docc in Sources */,
 				0DECC43D28FDAD2B00FD3D78 /* NetworkError.swift in Sources */,
 			);
