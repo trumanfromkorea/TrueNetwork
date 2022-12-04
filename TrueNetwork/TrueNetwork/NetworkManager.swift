@@ -63,17 +63,8 @@ public final class NetworkManager {
         // request, method
         var request = URLRequest(url: url)
         request.httpMethod = endpoint.method.label
-
-        // body
-        if let body = endpoint.body,
-           let bodyData = try? JSONSerialization.data(withJSONObject: body) {
-            request.httpBody = bodyData
-        }
-
-        // headers
-        endpoint.headers?.forEach { key, value in
-            request.addValue(value, forHTTPHeaderField: key)
-        }
+        request.addBody(endpoint.body)
+        request.addHeaders(endpoint.headers)
 
         return request
     }

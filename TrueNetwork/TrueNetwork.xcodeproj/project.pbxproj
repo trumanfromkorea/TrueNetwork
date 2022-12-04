@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D9719FA293CE00F00B32148 /* URLRequest+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9719F9293CE00F00B32148 /* URLRequest+.swift */; };
 		0DDE958B293B91B900B41AE7 /* URLComponents+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDE958A293B91B900B41AE7 /* URLComponents+.swift */; };
 		0DECC41D28FDAB8100FD3D78 /* TrueNetwork.docc in Sources */ = {isa = PBXBuildFile; fileRef = 0DECC41C28FDAB8100FD3D78 /* TrueNetwork.docc */; };
 		0DECC42328FDAB8100FD3D78 /* TrueNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DECC41828FDAB8100FD3D78 /* TrueNetwork.framework */; };
@@ -29,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D9719F9293CE00F00B32148 /* URLRequest+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+.swift"; sourceTree = "<group>"; };
 		0DDE958A293B91B900B41AE7 /* URLComponents+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLComponents+.swift"; sourceTree = "<group>"; };
 		0DECC41828FDAB8100FD3D78 /* TrueNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TrueNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DECC41B28FDAB8100FD3D78 /* TrueNetwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrueNetwork.h; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				0DDE958A293B91B900B41AE7 /* URLComponents+.swift */,
+				0D9719F9293CE00F00B32148 /* URLRequest+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D9719FA293CE00F00B32148 /* URLRequest+.swift in Sources */,
 				0DECC43B28FDAD0300FD3D78 /* Method.swift in Sources */,
 				0DECC43528FDACB900FD3D78 /* NetworkManager.swift in Sources */,
 				0DECC43928FDACF800FD3D78 /* API.swift in Sources */,
