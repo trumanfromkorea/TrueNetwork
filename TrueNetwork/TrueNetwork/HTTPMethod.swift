@@ -1,5 +1,5 @@
 //
-//  Method.swift
+//  HTTPMethod.swift
 //  TrueNetwork
 //
 //  Created by 장재훈 on 2022/10/18.

@@ -9,13 +9,13 @@ import Foundation
 
 extension URLComponents {
     mutating func addPaths(_ paths: [String]) {
-        path = "\(paths.joined(separator: "/"))"
+        path = paths.joined(separator: "/")
     }
 
     mutating func addParameters(_ parameters: [String: Any]?) {
         parameters?.forEach { key, value in
             let query = URLQueryItem(name: key, value: "\(value)")
-            
+
             queryItems?.append(query)
         }
     }
