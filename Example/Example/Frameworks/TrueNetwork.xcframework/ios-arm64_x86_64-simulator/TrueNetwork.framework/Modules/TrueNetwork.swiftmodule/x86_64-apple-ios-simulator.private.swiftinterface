@@ -1,0 +1,56 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.7.1 (swiftlang-5.7.1.135.3 clang-1400.0.29.51)
+// swift-module-flags: -target x86_64-apple-ios16.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name TrueNetwork
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import Foundation
+import Swift
+@_exported import TrueNetwork
+import _Concurrency
+import _StringProcessing
+public enum HTTPMethod {
+  case get
+  case post
+  case delete
+  case patch
+  case put
+  public var label: Swift.String {
+    get
+  }
+  public static func == (a: TrueNetwork.HTTPMethod, b: TrueNetwork.HTTPMethod) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers final public class NetworkManager {
+  public static let shared: TrueNetwork.NetworkManager
+  final public func request<T>(endpoint: TrueNetwork.RequestConvertible, completion: ((Swift.Result<T, TrueNetwork.NetworkError>) -> Swift.Void)?) where T : Swift.Decodable, T : Swift.Encodable
+  @objc deinit
+}
+public protocol RequestConvertible {
+  var method: TrueNetwork.HTTPMethod { get }
+  var baseUrl: Swift.String { get }
+  var paths: [Swift.String] { get }
+  var parameters: [Swift.String : Any]? { get }
+  var body: [Swift.String : Any]? { get }
+  var headers: [Swift.String : Swift.String]? { get }
+}
+public enum NetworkError : Foundation.LocalizedError {
+  case invalidRequest
+  case invalidResponse
+  case invalidData
+  case serverError
+  case networkFailed
+  public var errorDescription: Swift.String {
+    get
+  }
+  public static func == (a: TrueNetwork.NetworkError, b: TrueNetwork.NetworkError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension TrueNetwork.HTTPMethod : Swift.Equatable {}
+extension TrueNetwork.HTTPMethod : Swift.Hashable {}
+extension TrueNetwork.NetworkError : Swift.Equatable {}
+extension TrueNetwork.NetworkError : Swift.Hashable {}

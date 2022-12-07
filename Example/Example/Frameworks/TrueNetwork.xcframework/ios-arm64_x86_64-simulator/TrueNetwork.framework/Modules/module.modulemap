@@ -1,0 +1,11 @@
+framework module TrueNetwork {
+  umbrella header "TrueNetwork.h"
+
+  export *
+  module * { export * }
+}
+
+module TrueNetwork.Swift {
+  header "TrueNetwork-Swift.h"
+  requires objc
+}

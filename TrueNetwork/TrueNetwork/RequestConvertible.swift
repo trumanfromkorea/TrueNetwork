@@ -9,8 +9,8 @@ import Foundation
 
 // API 규격 프로토콜
 public protocol RequestConvertible {
-    var method: HTTPMethod { get }
     var baseUrl: String { get }
+    var method: HTTPMethod { get }
     var paths: [String] { get }
     var parameters: [String: Any]? { get }
     var body: [String: Any]? { get }
