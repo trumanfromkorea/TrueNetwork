@@ -8,7 +8,7 @@
 import Foundation
 
 // HTTPMethod 케이스
-public enum Method {
+public enum HTTPMethod {
     case get
     case post
     case delete

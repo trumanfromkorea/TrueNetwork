@@ -8,8 +8,8 @@
 import Foundation
 
 // API 규격 프로토콜
-public protocol API {
-    var method: Method { get }
+public protocol RequestConvertible {
+    var method: HTTPMethod { get }
     var baseUrl: String { get }
     var paths: [String] { get }
     var parameters: [String: Any]? { get }

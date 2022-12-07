@@ -12,7 +12,10 @@ public final class NetworkManager {
     private init() {}
 
     // Request 전송
-    public func request(endpoint: API, completion: ((Result<Data, NetworkError>) -> Void)?) {
+    public func request<T: Codable>(
+        endpoint: RequestConvertible,
+        completion: ((Result<T, NetworkError>) -> Void)?
+    ) {
         // request 생성
         guard let urlRequest = generateRequest(endpoint: endpoint) else {
             completion?(.failure(.invalidRequest))
@@ -36,19 +39,20 @@ public final class NetworkManager {
             }
 
             // response data 검사
-            guard let resultData = data else {
+            guard let data,
+                  let result: T = try? JSONDecoder().decode(T.self, from: data) else {
                 completion?(.failure(.invalidData))
                 return
             }
 
-            completion?(.success(resultData))
+            completion?(.success(result))
         }
 
         task.resume()
     }
 
     // Request 생성
-    private func generateRequest(endpoint: API) -> URLRequest? {
+    private func generateRequest(endpoint: RequestConvertible) -> URLRequest? {
         guard var urlComponents = URLComponents(string: endpoint.baseUrl) else {
             return nil
         }
