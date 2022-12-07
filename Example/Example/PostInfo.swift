@@ -12,4 +12,13 @@ struct PostInfo: Codable {
     let title: String
     let body: String
     let userId: Int
+
+    var dict: [String: Any]? {
+        guard let object = try? JSONEncoder().encode(self),
+              let dict = try? JSONSerialization.jsonObject(with: object, options: []) as? [String: Any] else {
+            return nil
+        }
+
+        return dict
+    }
 }
