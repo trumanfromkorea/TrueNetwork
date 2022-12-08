@@ -7,11 +7,23 @@
 
 import Foundation
 
-struct PostInfo: Codable {
+struct PostInfo: Codable, CustomStringConvertible {
+    let userId: Int
     let id: Int
     let title: String
     let body: String
-    let userId: Int
+    
+
+    var description: String {
+        return """
+        PostInfo: {
+            id: \(id)
+            title: \(title)
+            body: \(body)
+            userId: \(userId)
+        }
+        """
+    }
 
     var dict: [String: Any]? {
         guard let object = try? JSONEncoder().encode(self),

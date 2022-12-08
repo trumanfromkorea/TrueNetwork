@@ -37,7 +37,7 @@ extension Endpoint: RequestConvertible {
         case .patchTitle:
             return .patch
 
-        case let .deletePost:
+        case .deletePost:
             return .delete
         }
     }

@@ -16,10 +16,10 @@
 		0D17D2E22940C80700C01480 /* ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D17D2E12940C80700C01480 /* ExampleTests.swift */; };
 		0D17D2EC2940C80700C01480 /* ExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D17D2EB2940C80700C01480 /* ExampleUITests.swift */; };
 		0D17D2EE2940C80700C01480 /* ExampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D17D2ED2940C80700C01480 /* ExampleUITestsLaunchTests.swift */; };
-		0D1C03062940CBA2000A3BBE /* TrueNetwork.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D1C03042940CB90000A3BBE /* TrueNetwork.xcframework */; };
-		0D1C03072940CBA2000A3BBE /* TrueNetwork.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0D1C03042940CB90000A3BBE /* TrueNetwork.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0D1C030B2940CBE1000A3BBE /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C030A2940CBE1000A3BBE /* Endpoint.swift */; };
 		0D1C030E2940CCDE000A3BBE /* PostInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C030D2940CCDE000A3BBE /* PostInfo.swift */; };
+		0DE7C3AF2941FE7E006B2534 /* TrueNetwork.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE7C3AD2941FE78006B2534 /* TrueNetwork.xcframework */; };
+		0DE7C3B02941FE7E006B2534 /* TrueNetwork.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE7C3AD2941FE78006B2534 /* TrueNetwork.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +46,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				0D1C03072940CBA2000A3BBE /* TrueNetwork.xcframework in Embed Frameworks */,
+				0DE7C3B02941FE7E006B2534 /* TrueNetwork.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -67,9 +67,9 @@
 		0D17D2E72940C80700C01480 /* ExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D17D2EB2940C80700C01480 /* ExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleUITests.swift; sourceTree = "<group>"; };
 		0D17D2ED2940C80700C01480 /* ExampleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		0D1C03042940CB90000A3BBE /* TrueNetwork.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = TrueNetwork.xcframework; sourceTree = "<group>"; };
 		0D1C030A2940CBE1000A3BBE /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		0D1C030D2940CCDE000A3BBE /* PostInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostInfo.swift; sourceTree = "<group>"; };
+		0DE7C3AD2941FE78006B2534 /* TrueNetwork.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TrueNetwork.xcframework; path = ../../../TrueNetwork/build/TrueNetwork.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D1C03062940CBA2000A3BBE /* TrueNetwork.xcframework in Frameworks */,
+				0DE7C3AF2941FE7E006B2534 /* TrueNetwork.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,7 +155,7 @@
 		0D1C03092940CBB8000A3BBE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0D1C03042940CB90000A3BBE /* TrueNetwork.xcframework */,
+				0DE7C3AD2941FE78006B2534 /* TrueNetwork.xcframework */,
 			);
 			path = Frameworks;
 			sourceTree = "<group>";

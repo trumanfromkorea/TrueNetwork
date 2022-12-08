@@ -14,6 +14,7 @@ public final class NetworkManager {
     // Request 전송
     public func request<T: Codable>(
         endpoint: RequestConvertible,
+        dataType: T.Type,
         completion: ((Result<T, NetworkError>) -> Void)?
     ) {
         // request 생성
@@ -39,9 +40,15 @@ public final class NetworkManager {
             }
 
             // response data 검사
-            guard let data,
-                  let result: T = try? JSONDecoder().decode(T.self, from: data) else {
+            guard let data else {
                 completion?(.failure(.invalidData))
+                return
+            }
+
+            print(String(data: data, encoding: .utf8))
+
+            guard let result: T = try? JSONDecoder().decode(T.self, from: data) else {
+                completion?(.failure(.invalidType))
                 return
             }
 
@@ -52,13 +59,45 @@ public final class NetworkManager {
     }
 
     // Request 생성
+//    private func generateRequest(endpoint: RequestConvertible) -> URLRequest? {
+//        guard var urlComponents = URLComponents(string: endpoint.baseUrl) else {
+//            return nil
+//        }
+//
+//        urlComponents.addPaths(endpoint.paths)
+//        urlComponents.addParameters(endpoint.parameters)
+//
+//        print(urlComponents.url)
+//
+//        guard let url = urlComponents.url else {
+//            return nil
+//        }
+//
+//        // request, method
+//        var request = URLRequest(url: url)
+//        request.httpMethod = endpoint.method.label
+//        request.addBody(endpoint.body)
+//        request.addHeaders(endpoint.headers)
+//
+//        return request
+//    }
+
+    // Request 생성
     private func generateRequest(endpoint: RequestConvertible) -> URLRequest? {
-        guard var urlComponents = URLComponents(string: endpoint.baseUrl) else {
+        // url + paths
+        let urlString = endpoint.baseUrl + "/" + endpoint.paths.joined(separator: "/")
+
+        // parameters
+        guard var urlComponents = URLComponents(string: urlString) else {
             return nil
         }
 
-        urlComponents.addPaths(endpoint.paths)
-        urlComponents.addParameters(endpoint.parameters)
+        endpoint.parameters?.forEach({ key, value in
+            let query = URLQueryItem(name: key, value: "\(value)")
+
+            if urlComponents.queryItems == nil { urlComponents.queryItems = [] }
+            urlComponents.queryItems?.append(query)
+        })
 
         guard let url = urlComponents.url else {
             return nil
@@ -67,8 +106,17 @@ public final class NetworkManager {
         // request, method
         var request = URLRequest(url: url)
         request.httpMethod = endpoint.method.label
-        request.addBody(endpoint.body)
-        request.addHeaders(endpoint.headers)
+
+        // body
+        if let body = endpoint.body,
+           let bodyData = try? JSONSerialization.data(withJSONObject: body) {
+            request.httpBody = bodyData
+        }
+
+        // headers
+        endpoint.headers?.forEach { key, value in
+            request.addValue(value, forHTTPHeaderField: key)
+        }
 
         return request
     }

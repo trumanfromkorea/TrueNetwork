@@ -12,6 +12,7 @@ public enum NetworkError: LocalizedError {
     case invalidRequest
     case invalidResponse
     case invalidData
+    case invalidType
     case serverError
     case networkFailed
 
@@ -23,6 +24,8 @@ public enum NetworkError: LocalizedError {
             return "유효하지 않은 데이터 응답입니다."
         case .invalidData:
             return "유효하지 않은 데이터입니다."
+        case.invalidType:
+            return "응답 데이터와 객체 정보가 일치하지 않습니다."
         case .serverError:
             return "서버 내부 에러입니다."
         case .networkFailed:
