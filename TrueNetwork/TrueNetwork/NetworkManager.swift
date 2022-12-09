@@ -58,8 +58,9 @@ public final class NetworkManager {
 
     // Request 생성
     private func generateRequest(endpoint: RequestConvertible) -> URLRequest? {
+        // paths, params
         let url = URL(string: endpoint.baseUrl)?
-            .addPaths(endpoint.paths)?
+            .addPaths(endpoint.paths)
             .addParameters(endpoint.parameters)
 
         guard let url else {
@@ -68,9 +69,10 @@ public final class NetworkManager {
 
         // request, method
         var request = URLRequest(url: url)
+            .addBody(endpoint.body)
+            .addHeaders(endpoint.headers)
+
         request.httpMethod = endpoint.method.label
-        request.addBody(endpoint.body)
-        request.addHeaders(endpoint.headers)
 
         return request
     }

@@ -8,17 +8,24 @@
 import Foundation
 
 extension URLRequest {
-    mutating func addBody(_ body: [String: Any]?) {
-        guard let body,
-              let bodyData = try? JSONSerialization.data(withJSONObject: body) else {
-            return
+    func addBody(_ body: [String: Any]?) -> URLRequest {
+        var request = self
+
+        if let body,
+           let bodyData = try? JSONSerialization.data(withJSONObject: body) {
+            request.httpBody = bodyData
         }
-        httpBody = bodyData
+
+        return request
     }
 
-    mutating func addHeaders(_ headers: [String: String]?) {
+    func addHeaders(_ headers: [String: String]?) -> URLRequest {
+        var request = self
+
         headers?.forEach { key, value in
-            addValue(value, forHTTPHeaderField: key)
+            request.addValue(value, forHTTPHeaderField: key)
         }
+
+        return request
     }
 }

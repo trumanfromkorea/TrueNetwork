@@ -8,7 +8,7 @@
 import Foundation
 
 extension URL {
-    func addPaths(_ paths: [String]) -> URL? {
+    func addPaths(_ paths: [String]) -> URL {
         return paths.reduce(self) { $0.appending(path: $1) }
     }
 

@@ -11,21 +11,6 @@ import UIKit
 class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        fetchPosts()
-        
-        var url = URL(string: "https://www.google.com")
-        
-//        ["hello", "dldl"].forEach {
-//            url = url?.appending(path: $0)
-//        }
-        
-        let newUrl = ["hello", "bye"].reduce(url) { partialResult, value in
-            partialResult?.appending(path: value)
-        }
-        
-        print(newUrl)
-        
     }
 }
 
