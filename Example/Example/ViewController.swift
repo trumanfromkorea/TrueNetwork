@@ -11,6 +11,15 @@ import UIKit
 class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NetworkManager.shared.request(endpoint: Endpoint.fetchPosts, dataType: [PostInfo].self) { result in
+            switch result {
+            case let .success(postInfos):
+                print(postInfos)
+            case let .failure(error):
+                print(error.errorDescription)
+            }
+        }
     }
 }
 

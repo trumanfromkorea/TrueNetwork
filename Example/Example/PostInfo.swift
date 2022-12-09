@@ -16,12 +16,14 @@ struct PostInfo: Codable, CustomStringConvertible {
 
     var description: String {
         return """
+        
         PostInfo: {
             id: \(id)
             title: \(title)
             body: \(body)
             userId: \(userId)
         }
+        
         """
     }
 
