@@ -1,7 +1,7 @@
-cd ./TrueNetwork
-rm -rf build
+DIRNAME="TrueNetwork"
 
-DIRNAME=${PWD##*/}
+cd ./$DIRNAME
+rm -rf build
 
 xcodebuild archive -scheme $DIRNAME -archivePath "./build/ios.xcarchive" -sdk iphoneos SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES
 
