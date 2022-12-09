@@ -45,8 +45,6 @@ public final class NetworkManager {
                 return
             }
 
-            print(String(data: data, encoding: .utf8))
-
             guard let result: T = try? JSONDecoder().decode(T.self, from: data) else {
                 completion?(.failure(.invalidType))
                 return
@@ -59,64 +57,20 @@ public final class NetworkManager {
     }
 
     // Request 생성
-//    private func generateRequest(endpoint: RequestConvertible) -> URLRequest? {
-//        guard var urlComponents = URLComponents(string: endpoint.baseUrl) else {
-//            return nil
-//        }
-//
-//        urlComponents.addPaths(endpoint.paths)
-//        urlComponents.addParameters(endpoint.parameters)
-//
-//        print(urlComponents.url)
-//
-//        guard let url = urlComponents.url else {
-//            return nil
-//        }
-//
-//        // request, method
-//        var request = URLRequest(url: url)
-//        request.httpMethod = endpoint.method.label
-//        request.addBody(endpoint.body)
-//        request.addHeaders(endpoint.headers)
-//
-//        return request
-//    }
-
-    // Request 생성
     private func generateRequest(endpoint: RequestConvertible) -> URLRequest? {
-        // url + paths
-        let urlString = endpoint.baseUrl + "/" + endpoint.paths.joined(separator: "/")
+        let url = URL(string: endpoint.baseUrl)?
+            .addPaths(endpoint.paths)?
+            .addParameters(endpoint.parameters)
 
-        // parameters
-        guard var urlComponents = URLComponents(string: urlString) else {
-            return nil
-        }
-
-        endpoint.parameters?.forEach({ key, value in
-            let query = URLQueryItem(name: key, value: "\(value)")
-
-            if urlComponents.queryItems == nil { urlComponents.queryItems = [] }
-            urlComponents.queryItems?.append(query)
-        })
-
-        guard let url = urlComponents.url else {
+        guard let url else {
             return nil
         }
 
         // request, method
         var request = URLRequest(url: url)
         request.httpMethod = endpoint.method.label
-
-        // body
-        if let body = endpoint.body,
-           let bodyData = try? JSONSerialization.data(withJSONObject: body) {
-            request.httpBody = bodyData
-        }
-
-        // headers
-        endpoint.headers?.forEach { key, value in
-            request.addValue(value, forHTTPHeaderField: key)
-        }
+        request.addBody(endpoint.body)
+        request.addHeaders(endpoint.headers)
 
         return request
     }
