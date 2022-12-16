@@ -30,7 +30,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vLM-pH-WAo">
                                         <rect key="frame" x="0.0" y="130" width="353" height="109.66666666666669"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Fetch Post With ID - path"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Fetch Comment With ID - path"/>
                                         <connections>
                                             <action selector="tapFetchPostIDPath:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XkZ-x1-uM7"/>
                                         </connections>
@@ -38,7 +38,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7kA-Uf-X31">
                                         <rect key="frame" x="0.0" y="259.66666666666669" width="353" height="110"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Fetch Post With ID - param"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Fetch Comment With ID - param"/>
                                         <connections>
                                             <action selector="tapFetchPostIDParam:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MCI-wc-BqT"/>
                                         </connections>

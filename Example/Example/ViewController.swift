@@ -19,13 +19,18 @@ class ViewController: UIViewController {
         NetworkManager.shared.request(
             endpoint: Endpoint.fetchPosts,
             dataType: [PostInfo].self
-        ) { [weak self] result in
-            self?.handleResult(result: result)
+        ) { result in
+            switch result {
+            case let .success(data):
+                print(data.description)
+            case let .failure(error):
+                print(error.errorDescription)
+            }
         }
     }
 
     @IBAction func tapFetchPostIDPath(_ sender: Any) {
-        showInputAlert(title: "id") { id in
+        showInputAlert(title: "Input ID") { id in
             guard let id = Int(id) else {
                 return
             }
@@ -45,6 +50,23 @@ class ViewController: UIViewController {
     }
 
     @IBAction func tapFetchPostIDParam(_ sender: Any) {
+        showInputAlert(title: "Input ID") { id in
+            guard let id = Int(id) else {
+                return
+            }
+
+            NetworkManager.shared.request(
+                endpoint: Endpoint.fetchCommentsWithParams(postId: id),
+                dataType: [CommentInfo].self
+            ) { result in
+                switch result {
+                case let .success(data):
+                    print(data)
+                case let .failure(error):
+                    print(error.errorDescription)
+                }
+            }
+        }
     }
 
     @IBAction func tapUpdatePost(_ sender: Any) {
@@ -54,14 +76,22 @@ class ViewController: UIViewController {
     }
 
     @IBAction func tapDelete(_ sender: Any) {
-    }
+        showInputAlert(title: "Input ID") { id in
+            guard let id = Int(id) else {
+                return
+            }
 
-    private func handleResult(result: Result<[PostInfo], NetworkError>) {
-        switch result {
-        case let .success(data):
-            print(data.description)
-        case let .failure(error):
-            print(error.errorDescription)
+            NetworkManager.shared.request(
+                endpoint: Endpoint.deletePost(postId: id),
+                dataType: DeleteResponse.self
+            ) { result in
+                switch result {
+                case let .success(data):
+                    print(data)
+                case let .failure(error):
+                    print(error.errorDescription)
+                }
+            }
         }
     }
 
@@ -71,7 +101,9 @@ class ViewController: UIViewController {
             message: "",
             preferredStyle: .alert
         )
-        alert.addTextField()
+
+        alert.addTextField { $0.placeholder = "ID" }
+
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         alert.addAction(UIAlertAction(title: "OK", style: .default) { _ in
             guard let text = alert.textFields?.first?.text else {

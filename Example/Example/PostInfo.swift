@@ -36,3 +36,5 @@ struct PostInfo: Codable, CustomStringConvertible {
         return dict
     }
 }
+
+struct DeleteResponse: Codable {}
