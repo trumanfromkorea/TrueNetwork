@@ -14,7 +14,7 @@ enum Endpoint {
     case fetchCommentsWithParams(postId: Int)
     case writePost(post: PostInfo)
     case updatePost(postId: Int, post: PostInfo)
-    case patchTitle(postId: Int, title: String)
+    case updateTitle(postId: Int, title: String)
     case deletePost(postId: Int)
 }
 
@@ -34,7 +34,7 @@ extension Endpoint: RequestConvertible {
         case .updatePost:
             return .put
 
-        case .patchTitle:
+        case .updateTitle:
             return .patch
 
         case .deletePost:
@@ -59,7 +59,7 @@ extension Endpoint: RequestConvertible {
         case let .updatePost(postId, _):
             return ["posts", "\(postId)"]
 
-        case let .patchTitle(postId, _):
+        case let .updateTitle(postId, _):
             return ["posts", "\(postId)"]
 
         case let .deletePost(postId):
@@ -85,7 +85,7 @@ extension Endpoint: RequestConvertible {
         case let .updatePost(_, post):
             return post.dict
 
-        case let .patchTitle(_, title):
+        case let .updateTitle(_, title):
             return ["title": title]
 
         default:
