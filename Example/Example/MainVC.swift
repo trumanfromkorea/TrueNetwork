@@ -8,9 +8,21 @@
 import TrueNetwork
 import UIKit
 
-final class ViewController: UIViewController {
+final class MainVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+
+    private func navigate(with response: String) {
+        DispatchQueue.main.async { [weak self] in
+            guard let vc = self?.storyboard?.instantiateViewController(withIdentifier: "ResponseVC") as? ResponseVC else {
+                return
+            }
+
+            vc.labelText = response
+
+            self?.navigationController?.pushViewController(vc, animated: true)
+        }
     }
 
     // MARK: - Actions
@@ -22,7 +34,7 @@ final class ViewController: UIViewController {
         ) { [weak self] result in
             switch result {
             case let .success(data):
-                print(data.description)
+                self?.navigate(with: data.description)
             case let .failure(error):
                 self?.singleMessageAlert(message: error.errorDescription)
             }
@@ -41,7 +53,7 @@ final class ViewController: UIViewController {
             ) { [weak self] result in
                 switch result {
                 case let .success(data):
-                    print(data)
+                    self?.navigate(with: data.description)
                 case let .failure(error):
                     self?.singleMessageAlert(message: error.errorDescription)
                 }
@@ -61,7 +73,7 @@ final class ViewController: UIViewController {
             ) { [weak self] result in
                 switch result {
                 case let .success(data):
-                    print(data)
+                    self?.navigate(with: data.description)
                 case let .failure(error):
                     self?.singleMessageAlert(message: error.errorDescription)
                 }
@@ -77,7 +89,7 @@ final class ViewController: UIViewController {
             ) { [weak self] result in
                 switch result {
                 case let .success(data):
-                    print(data)
+                    self?.navigate(with: data.description)
                 case let .failure(error):
                     self?.singleMessageAlert(message: error.errorDescription)
                 }
@@ -93,7 +105,7 @@ final class ViewController: UIViewController {
             ) { [weak self] result in
                 switch result {
                 case let .success(data):
-                    print(data)
+                    self?.navigate(with: data.description)
                 case let .failure(error):
                     self?.singleMessageAlert(message: error.errorDescription)
                 }
@@ -112,7 +124,7 @@ final class ViewController: UIViewController {
                 dataType: DeleteResponse.self
             ) { [weak self] result in
                 switch result {
-                case let .success(data):
+                case .success:
                     self?.singleMessageAlert(message: "삭제 완료")
                 case let .failure(error):
                     self?.singleMessageAlert(message: error.errorDescription)
@@ -122,12 +134,16 @@ final class ViewController: UIViewController {
     }
 }
 
-private extension ViewController {
+// MARK: - Alerts
+
+private extension MainVC {
     func singleMessageAlert(message: String) {
         let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default))
 
-        present(alert, animated: true)
+        DispatchQueue.main.async { [weak self] in
+            self?.present(alert, animated: true)
+        }
     }
 
     func idAlert(completion: @escaping (String) -> Void) {
@@ -144,7 +160,9 @@ private extension ViewController {
             completion(id)
         })
 
-        present(alert, animated: true)
+        DispatchQueue.main.async { [weak self] in
+            self?.present(alert, animated: true)
+        }
     }
 
     func idTitleAlert(completion: @escaping ((Int, String)) -> Void) {
@@ -160,13 +178,12 @@ private extension ViewController {
                 return
             }
 
-            completion(
-                (Int(id) ?? 0,
-                 title)
-            )
+            completion((Int(id) ?? 0, title))
         })
 
-        present(alert, animated: true)
+        DispatchQueue.main.async { [weak self] in
+            self?.present(alert, animated: true)
+        }
     }
 
     func postInfoAlert(completion: @escaping (PostInfo) -> Void) {
@@ -189,6 +206,8 @@ private extension ViewController {
             completion(PostInfo(userId: Int(userId) ?? 0, id: Int(id) ?? 0, title: title, body: body))
         })
 
-        present(alert, animated: true)
+        DispatchQueue.main.async { [weak self] in
+            self?.present(alert, animated: true)
+        }
     }
 }

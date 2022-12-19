@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ndl-44-GpF">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -8,19 +8,19 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Cases-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainVC" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Gat-NI-btW">
-                                <rect key="frame" x="20" y="59" width="353" height="759"/>
+                                <rect key="frame" x="20" y="103" width="353" height="715"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l4H-f9-JdJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="353" height="110"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="353" height="102.66666666666667"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Fetch All Posts"/>
                                         <connections>
@@ -28,7 +28,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vLM-pH-WAo">
-                                        <rect key="frame" x="0.0" y="130" width="353" height="109.66666666666669"/>
+                                        <rect key="frame" x="0.0" y="122.66666666666666" width="353" height="102.33333333333334"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Fetch Comment With ID - path"/>
                                         <connections>
@@ -36,7 +36,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7kA-Uf-X31">
-                                        <rect key="frame" x="0.0" y="259.66666666666669" width="353" height="110"/>
+                                        <rect key="frame" x="0.0" y="244.99999999999997" width="353" height="102.66666666666666"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Fetch Comment With ID - param"/>
                                         <connections>
@@ -44,7 +44,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UfR-OJ-9JO">
-                                        <rect key="frame" x="0.0" y="389.66666666666669" width="353" height="109.66666666666669"/>
+                                        <rect key="frame" x="0.0" y="367.66666666666669" width="353" height="102.33333333333331"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Update Post"/>
                                         <connections>
@@ -52,7 +52,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="icG-BJ-3eb">
-                                        <rect key="frame" x="0.0" y="519.33333333333337" width="353" height="110"/>
+                                        <rect key="frame" x="0.0" y="490.00000000000006" width="353" height="102.66666666666669"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Update Title"/>
                                         <connections>
@@ -60,7 +60,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0RZ-ZH-KxC">
-                                        <rect key="frame" x="0.0" y="649.33333333333337" width="353" height="109.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="612.66666666666663" width="353" height="102.33333333333337"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Delete"/>
                                         <connections>
@@ -79,25 +79,85 @@
                             <constraint firstItem="Gat-NI-btW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="rFj-Rg-aGL"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Cases" id="8V3-uK-8xc"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="45" y="-2"/>
+            <point key="canvasLocation" x="970.2290076335878" y="-2.1126760563380285"/>
         </scene>
-        <!--View Controller-->
+        <!--Response-->
         <scene sceneID="TUr-oG-fN2">
             <objects>
-                <viewController id="BZw-Ow-kXY" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ResponseVC" title="Response" id="BZw-Ow-kXY" customClass="ResponseVC" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bzW-t2-r3I">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J3O-bF-Ubk">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yts-I4-anj">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="20.333333333333332"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r9B-T9-IUB">
+                                                <rect key="frame" x="20" y="0.0" width="353" height="20.333333333333332"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="r9B-T9-IUB" secondAttribute="bottom" id="FW1-xz-3ZH"/>
+                                            <constraint firstAttribute="trailing" secondItem="r9B-T9-IUB" secondAttribute="trailing" constant="20" id="G98-4X-12C"/>
+                                            <constraint firstItem="r9B-T9-IUB" firstAttribute="leading" secondItem="Yts-I4-anj" secondAttribute="leading" constant="20" id="cCZ-KC-2DW"/>
+                                            <constraint firstItem="r9B-T9-IUB" firstAttribute="top" secondItem="Yts-I4-anj" secondAttribute="top" id="ezl-fX-XvL"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Yts-I4-anj" firstAttribute="width" secondItem="J3O-bF-Ubk" secondAttribute="width" id="Fsc-VB-nVb"/>
+                                    <constraint firstAttribute="trailing" secondItem="Yts-I4-anj" secondAttribute="trailing" id="KWl-dF-9qb"/>
+                                    <constraint firstAttribute="bottom" secondItem="Yts-I4-anj" secondAttribute="bottom" id="NVq-l5-bLa"/>
+                                    <constraint firstItem="Yts-I4-anj" firstAttribute="leading" secondItem="J3O-bF-Ubk" secondAttribute="leading" id="Smd-Zs-Xcs"/>
+                                    <constraint firstItem="Yts-I4-anj" firstAttribute="top" secondItem="J3O-bF-Ubk" secondAttribute="top" id="l4M-VT-cMp"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="0WH-eb-opc"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="J3O-bF-Ubk" secondAttribute="bottom" id="4EW-xG-k0J"/>
+                            <constraint firstItem="J3O-bF-Ubk" firstAttribute="top" secondItem="bzW-t2-r3I" secondAttribute="top" id="4oD-or-ojs"/>
+                            <constraint firstItem="0WH-eb-opc" firstAttribute="trailing" secondItem="J3O-bF-Ubk" secondAttribute="trailing" id="UBU-4U-Dmo"/>
+                            <constraint firstItem="J3O-bF-Ubk" firstAttribute="leading" secondItem="0WH-eb-opc" secondAttribute="leading" id="iE7-wY-KrK"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="label" destination="r9B-T9-IUB" id="Qo0-VD-qm1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dte-iI-XsM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="831" y="-2"/>
+            <point key="canvasLocation" x="1756.4885496183206" y="-2.1126760563380285"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fbO-27-Vzz">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ndl-44-GpF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="982-l7-50d">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="FBO-Iu-mfC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UXy-JF-JFq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="43.511450381679388" y="-2.1126760563380285"/>
         </scene>
     </scenes>
     <resources>
