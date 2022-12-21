@@ -7,6 +7,7 @@
 
 import Foundation
 
+@available(iOS 16.0, *)
 extension URL {
     func addPaths(_ paths: [String]) -> URL {
         return paths.reduce(self) { $0.appending(path: $1) }

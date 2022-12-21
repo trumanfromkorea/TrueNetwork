@@ -7,6 +7,7 @@
 
 import Foundation
 
+@available(iOS 16.0, *)
 public final class NetworkManager {
     public static let shared = NetworkManager()
     private init() {}
