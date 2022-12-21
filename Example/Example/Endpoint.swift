@@ -56,13 +56,7 @@ extension Endpoint: RequestConvertible {
         case .writePost:
             return ["posts"]
 
-        case let .updatePost(postId, _):
-            return ["posts", "\(postId)"]
-
-        case let .updateTitle(postId, _):
-            return ["posts", "\(postId)"]
-
-        case let .deletePost(postId):
+        case let .updatePost(postId, _), .updateTitle(postId, _), .deletePost(postId):
             return ["posts", "\(postId)"]
         }
     }
