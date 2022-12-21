@@ -23,7 +23,7 @@ extension Endpoint: RequestConvertible {
         return "https://jsonplaceholder.typicode.com"
     }
 
-    var method: TrueNetwork.HTTPMethod {
+    var method: HTTPMethod {
         switch self {
         case .fetchPosts, .fetchCommentsWithPath, .fetchCommentsWithParams:
             return .get

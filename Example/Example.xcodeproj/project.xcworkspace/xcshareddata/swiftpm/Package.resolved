@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "truenetwork",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/trumanfromkorea/TrueNetwork",
+      "state" : {
+        "branch" : "main",
+        "revision" : "a82ef99f2b89c826ccb9fca42f7d4b187d6639fe"
+      }
+    }
+  ],
+  "version" : 2
+}
