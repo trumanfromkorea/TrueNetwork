@@ -114,24 +114,21 @@ extension Endpoint: RequestConvertible {
 
 ### request 메소드 호출
 
-- `NetworkManager.shared` 의 `request` 메소드를 호출합니다.
-- `endpoint` 파라미터에는 위의 `RequestConvertible` 을 준수하는 객체를 활용합니다. 예시의 경우 `Endpoint` 객체를 사용합니다.
-- `dataType` 의 경우 응답 데이터를 디코딩할 객체 타입을 사용합니다.
-- `completion` 의 경우 앞선 파라미터인 `dataType` 과 `NetworkError` 로 이루어진 `Result` 타입을 파라미터로 갖습니다.
+- 제네릭 타입을 활용해 원하는 응답 객체를 `NetworkManager` 로 생성할 수 있습니다. 
+- `enpoint` 파라미터에는 위의 `RequestConvertible` 을 준수하는 객체를 활용합니다. 예시의 경우 `Endpoint` 객체를 사용합니다.
+- `completion` 의 경우 객체를 생성할 때 사용했던 제네릭 타입과 `NetworkError` 로 이루어진 `Result` 타입을 파라미터로 갖습니다.
 - 아래는 해당 메소드를 직접 호출한 예입니다.
 
 ```swift
-NetworkManager.shared.request(
-    endpoint: Endpoint.fetchPosts,
-    dataType: [PostInfo].self
-) { [weak self] result in
-    switch result {
-    case let .success(data):
-        // 성공 시 data 를 이용한 작업
-    case let .failure(error):
-        // 실패 시 error 을 이용한 예외처리
+NetworkManager<[PostInfo]>()
+    .request(endpoint: Endpoint.fetchPosts) { [weak self] result in
+        switch result {
+        case let .success(data):
+            // 성공 시 data 를 이용한 작업
+        case let .failure(error):
+            // 실패 시 error 을 이용한 예외처리
+        }
     }
-}
 ```
 
 - 레포지토리에 포함된 Example 프로젝트에서 더 자세한 사용법을 확인하실 수 있습니다. 
