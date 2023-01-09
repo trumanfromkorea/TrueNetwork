@@ -15,5 +15,30 @@ public protocol RequestConvertible {
     var parameters: [String: Any]? { get }
     var body: [String: Any]? { get }
     var headers: [String: String]? { get }
+    
+    var request: URLRequest? {get}
+}
+
+@available(iOS 16.0, *)
+public extension RequestConvertible {
+    var request: URLRequest? {
+        // paths, params
+        let url = URL(string: baseUrl)?
+            .addPaths(paths)
+            .addParameters(parameters)
+
+        guard let url else {
+            return nil
+        }
+
+        // request, method
+        var request = URLRequest(url: url)
+            .addBody(body)
+            .addHeaders(headers)
+
+        request.httpMethod = method.label
+
+        return request
+    }
 }
 

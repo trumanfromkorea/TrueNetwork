@@ -19,7 +19,7 @@ public final class NetworkManager {
         completion: ((Result<T, NetworkError>) -> Void)?
     ) {
         // request 생성
-        guard let urlRequest = generateRequest(endpoint: endpoint) else {
+        guard let urlRequest = endpoint.request else {
             completion?(.failure(.invalidRequest))
             return
         }
@@ -55,26 +55,5 @@ public final class NetworkManager {
         }
 
         task.resume()
-    }
-
-    // Request 생성
-    private func generateRequest(endpoint: RequestConvertible) -> URLRequest? {
-        // paths, params
-        let url = URL(string: endpoint.baseUrl)?
-            .addPaths(endpoint.paths)
-            .addParameters(endpoint.parameters)
-
-        guard let url else {
-            return nil
-        }
-
-        // request, method
-        var request = URLRequest(url: url)
-            .addBody(endpoint.body)
-            .addHeaders(endpoint.headers)
-
-        request.httpMethod = endpoint.method.label
-
-        return request
     }
 }
