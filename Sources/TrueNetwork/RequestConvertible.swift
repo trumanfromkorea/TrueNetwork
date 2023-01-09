@@ -16,12 +16,12 @@ public protocol RequestConvertible {
     var body: [String: Any]? { get }
     var headers: [String: String]? { get }
     
-    var request: URLRequest? {get}
+    func request(timeoutInterval: CGFloat) -> URLRequest?
 }
 
 @available(iOS 16.0, *)
 public extension RequestConvertible {
-    var request: URLRequest? {
+    func request(timeoutInterval: CGFloat) -> URLRequest? {
         // paths, params
         let url = URL(string: baseUrl)?
             .addPaths(paths)
@@ -37,6 +37,7 @@ public extension RequestConvertible {
             .addHeaders(headers)
 
         request.httpMethod = method.label
+        request.timeoutInterval = timeoutInterval
 
         return request
     }

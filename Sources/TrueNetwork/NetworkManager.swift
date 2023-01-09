@@ -8,18 +8,20 @@
 import Foundation
 
 @available(iOS 16.0, *)
-public final class NetworkManager {
-    public static let shared = NetworkManager()
-    private init() {}
+public final class NetworkManager<T: Codable> {
+    let timeoutInterval: CGFloat
+
+    init(timeoutInterval: CGFloat = 5) {
+        self.timeoutInterval = timeoutInterval
+    }
 
     // Request 전송
-    public func request<T: Codable>(
+    public func request(
         endpoint: RequestConvertible,
-        dataType: T.Type,
         completion: ((Result<T, NetworkError>) -> Void)?
     ) {
         // request 생성
-        guard let urlRequest = endpoint.request else {
+        guard let urlRequest = endpoint.request(timeoutInterval: timeoutInterval) else {
             completion?(.failure(.invalidRequest))
             return
         }
