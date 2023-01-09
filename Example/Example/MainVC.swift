@@ -28,17 +28,15 @@ final class MainVC: UIViewController {
     // MARK: - Actions
 
     @IBAction func tapFetchAllPosts(_ sender: Any) {
-        NetworkManager.shared.request(
-            endpoint: Endpoint.fetchPosts,
-            dataType: [PostInfo].self
-        ) { [weak self] result in
-            switch result {
-            case let .success(data):
-                self?.navigate(with: data.description)
-            case let .failure(error):
-                self?.singleMessageAlert(message: error.errorDescription)
+        NetworkManager<[PostInfo]>()
+            .request(endpoint: Endpoint.fetchPosts) { [weak self] result in
+                switch result {
+                case let .success(data):
+                    self?.navigate(with: data.description)
+                case let .failure(error):
+                    self?.singleMessageAlert(message: error.errorDescription)
+                }
             }
-        }
     }
 
     @IBAction func tapFetchPostIDPath(_ sender: Any) {
@@ -47,17 +45,15 @@ final class MainVC: UIViewController {
                 return
             }
 
-            NetworkManager.shared.request(
-                endpoint: Endpoint.fetchCommentsWithPath(postId: id),
-                dataType: [CommentInfo].self
-            ) { [weak self] result in
-                switch result {
-                case let .success(data):
-                    self?.navigate(with: data.description)
-                case let .failure(error):
-                    self?.singleMessageAlert(message: error.errorDescription)
+            NetworkManager<[CommentInfo]>()
+                .request(endpoint: Endpoint.fetchCommentsWithPath(postId: id)) { [weak self] result in
+                    switch result {
+                    case let .success(data):
+                        self?.navigate(with: data.description)
+                    case let .failure(error):
+                        self?.singleMessageAlert(message: error.errorDescription)
+                    }
                 }
-            }
         }
     }
 
@@ -67,49 +63,43 @@ final class MainVC: UIViewController {
                 return
             }
 
-            NetworkManager.shared.request(
-                endpoint: Endpoint.fetchCommentsWithParams(postId: id),
-                dataType: [CommentInfo].self
-            ) { [weak self] result in
-                switch result {
-                case let .success(data):
-                    self?.navigate(with: data.description)
-                case let .failure(error):
-                    self?.singleMessageAlert(message: error.errorDescription)
+            NetworkManager<[CommentInfo]>()
+                .request(endpoint: Endpoint.fetchCommentsWithParams(postId: id)) { [weak self] result in
+                    switch result {
+                    case let .success(data):
+                        self?.navigate(with: data.description)
+                    case let .failure(error):
+                        self?.singleMessageAlert(message: error.errorDescription)
+                    }
                 }
-            }
         }
     }
 
     @IBAction func tapUpdatePost(_ sender: Any) {
         postInfoAlert { postInfo in
-            NetworkManager.shared.request(
-                endpoint: Endpoint.writePost(post: postInfo),
-                dataType: PostInfo.self
-            ) { [weak self] result in
-                switch result {
-                case let .success(data):
-                    self?.navigate(with: data.description)
-                case let .failure(error):
-                    self?.singleMessageAlert(message: error.errorDescription)
+            NetworkManager<PostInfo>()
+                .request(endpoint: Endpoint.writePost(post: postInfo)) { [weak self] result in
+                    switch result {
+                    case let .success(data):
+                        self?.navigate(with: data.description)
+                    case let .failure(error):
+                        self?.singleMessageAlert(message: error.errorDescription)
+                    }
                 }
-            }
         }
     }
 
     @IBAction func tapUpdateTitle(_ sender: Any) {
         idTitleAlert { id, title in
-            NetworkManager.shared.request(
-                endpoint: Endpoint.updateTitle(postId: id, title: title),
-                dataType: PostInfo.self
-            ) { [weak self] result in
-                switch result {
-                case let .success(data):
-                    self?.navigate(with: data.description)
-                case let .failure(error):
-                    self?.singleMessageAlert(message: error.errorDescription)
+            NetworkManager<PostInfo>()
+                .request(endpoint: Endpoint.updateTitle(postId: id, title: title)) { [weak self] result in
+                    switch result {
+                    case let .success(data):
+                        self?.navigate(with: data.description)
+                    case let .failure(error):
+                        self?.singleMessageAlert(message: error.errorDescription)
+                    }
                 }
-            }
         }
     }
 
@@ -119,17 +109,15 @@ final class MainVC: UIViewController {
                 return
             }
 
-            NetworkManager.shared.request(
-                endpoint: Endpoint.deletePost(postId: id),
-                dataType: DeleteResponse.self
-            ) { [weak self] result in
-                switch result {
-                case .success:
-                    self?.singleMessageAlert(message: "삭제 완료")
-                case let .failure(error):
-                    self?.singleMessageAlert(message: error.errorDescription)
+            NetworkManager<DeleteResponse>()
+                .request(endpoint: Endpoint.deletePost(postId: id)) { [weak self] result in
+                    switch result {
+                    case .success:
+                        self?.singleMessageAlert(message: "삭제 완료")
+                    case let .failure(error):
+                        self?.singleMessageAlert(message: error.errorDescription)
+                    }
                 }
-            }
         }
     }
 }

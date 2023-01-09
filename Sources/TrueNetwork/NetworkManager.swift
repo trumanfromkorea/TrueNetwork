@@ -11,7 +11,7 @@ import Foundation
 public final class NetworkManager<T: Codable> {
     let timeoutInterval: CGFloat
 
-    init(timeoutInterval: CGFloat = 5) {
+    public init(timeoutInterval: CGFloat = 5) {
         self.timeoutInterval = timeoutInterval
     }
 
@@ -48,14 +48,34 @@ public final class NetworkManager<T: Codable> {
                 return
             }
 
-            guard let result: T = try? JSONDecoder().decode(T.self, from: data) else {
+            // 타입 변환 시도
+            do {
+                let result = try JSONDecoder().decode(T.self, from: data)
+                completion?(.success(result))
+            } catch {
+                // 실패 시 json 파일로 덤프
+                self.writeExceptionData(data: data)
                 completion?(.failure(.invalidType))
-                return
             }
-
-            completion?(.success(result))
         }
 
         task.resume()
+    }
+
+    private func writeExceptionData(data: Data) {
+        guard let jsonString = String(data: data, encoding: .utf8),
+              let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
+            return
+        }
+
+        let pathWithFilename = documentDirectory.appendingPathComponent("exceptionData.json")
+
+        do {
+            try jsonString.write(to: pathWithFilename, atomically: true, encoding: .utf8)
+            print("Data exception, wrote file at ..")
+            print(documentDirectory)
+        } catch {
+            print(error)
+        }
     }
 }

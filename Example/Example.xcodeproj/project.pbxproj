@@ -18,8 +18,8 @@
 		0D17D2EE2940C80700C01480 /* ExampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D17D2ED2940C80700C01480 /* ExampleUITestsLaunchTests.swift */; };
 		0D1C030B2940CBE1000A3BBE /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C030A2940CBE1000A3BBE /* Endpoint.swift */; };
 		0D1C030E2940CCDE000A3BBE /* PostInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C030D2940CCDE000A3BBE /* PostInfo.swift */; };
-		0D31C3532952DE1E00D021AE /* TrueNetwork in Frameworks */ = {isa = PBXBuildFile; productRef = 0D31C3522952DE1E00D021AE /* TrueNetwork */; };
 		0D44440C294C3CF300D0DEF0 /* CommentInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D44440B294C3CF300D0DEF0 /* CommentInfo.swift */; };
+		0D8D2D37296C51BD00DF713E /* TrueNetwork in Frameworks */ = {isa = PBXBuildFile; productRef = 0D8D2D36296C51BD00DF713E /* TrueNetwork */; };
 		0D8EC95629504D99006082BB /* ResponseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8EC95529504D99006082BB /* ResponseVC.swift */; };
 		0DCCA5322950515000FF5529 /* Array+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCCA5312950515000FF5529 /* Array+.swift */; };
 /* End PBXBuildFile section */
@@ -71,6 +71,7 @@
 		0D1C030A2940CBE1000A3BBE /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		0D1C030D2940CCDE000A3BBE /* PostInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostInfo.swift; sourceTree = "<group>"; };
 		0D44440B294C3CF300D0DEF0 /* CommentInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentInfo.swift; sourceTree = "<group>"; };
+		0D8D2D34296C51A700DF713E /* TrueNetwork */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = TrueNetwork; path = ..; sourceTree = "<group>"; };
 		0D8EC95529504D99006082BB /* ResponseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseVC.swift; sourceTree = "<group>"; };
 		0DCCA5312950515000FF5529 /* Array+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,7 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D31C3532952DE1E00D021AE /* TrueNetwork in Frameworks */,
+				0D8D2D37296C51BD00DF713E /* TrueNetwork in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,10 +105,12 @@
 		0D17D2BE2940C80600C01480 = {
 			isa = PBXGroup;
 			children = (
+				0D8D2D33296C51A700DF713E /* Packages */,
 				0D17D2C92940C80600C01480 /* Example */,
 				0D17D2E02940C80700C01480 /* ExampleTests */,
 				0D17D2EA2940C80700C01480 /* ExampleUITests */,
 				0D17D2C82940C80600C01480 /* Products */,
+				0D8D2D35296C51BD00DF713E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -157,6 +160,21 @@
 			path = ExampleUITests;
 			sourceTree = "<group>";
 		};
+		0D8D2D33296C51A700DF713E /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				0D8D2D34296C51A700DF713E /* TrueNetwork */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		0D8D2D35296C51BD00DF713E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -175,7 +193,7 @@
 			);
 			name = Example;
 			packageProductDependencies = (
-				0D31C3522952DE1E00D021AE /* TrueNetwork */,
+				0D8D2D36296C51BD00DF713E /* TrueNetwork */,
 			);
 			productName = Example;
 			productReference = 0D17D2C72940C80600C01480 /* Example.app */;
@@ -250,7 +268,6 @@
 			);
 			mainGroup = 0D17D2BE2940C80600C01480;
 			packageReferences = (
-				0D31C3512952DE1E00D021AE /* XCRemoteSwiftPackageReference "TrueNetwork" */,
 			);
 			productRefGroup = 0D17D2C82940C80600C01480 /* Products */;
 			projectDirPath = "";
@@ -645,21 +662,9 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		0D31C3512952DE1E00D021AE /* XCRemoteSwiftPackageReference "TrueNetwork" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/trumanfromkorea/TrueNetwork";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
 /* Begin XCSwiftPackageProductDependency section */
-		0D31C3522952DE1E00D021AE /* TrueNetwork */ = {
+		0D8D2D36296C51BD00DF713E /* TrueNetwork */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 0D31C3512952DE1E00D021AE /* XCRemoteSwiftPackageReference "TrueNetwork" */;
 			productName = TrueNetwork;
 		};
 /* End XCSwiftPackageProductDependency section */
