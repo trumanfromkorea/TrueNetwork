@@ -114,13 +114,13 @@ extension Endpoint: RequestConvertible {
 
 ### request 메소드 호출
 
-- 제네릭 타입을 활용해 원하는 응답 객체를 `NetworkManager` 로 생성할 수 있습니다. 
+- 제네릭 타입을 활용해 원하는 응답 객체를 `NetworkProvider` 로 생성할 수 있습니다. 
 - `enpoint` 파라미터에는 위의 `RequestConvertible` 을 준수하는 객체를 활용합니다. 예시의 경우 `Endpoint` 객체를 사용합니다.
 - `completion` 의 경우 객체를 생성할 때 사용했던 제네릭 타입과 `NetworkError` 로 이루어진 `Result` 타입을 파라미터로 갖습니다.
 - 아래는 해당 메소드를 직접 호출한 예입니다.
 
 ```swift
-NetworkManager<[PostInfo]>()
+NetworkProvider<[PostInfo]>()
     .request(endpoint: Endpoint.fetchPosts) { [weak self] result in
         switch result {
         case let .success(data):

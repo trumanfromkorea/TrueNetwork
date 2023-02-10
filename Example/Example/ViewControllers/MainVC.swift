@@ -28,7 +28,7 @@ final class MainVC: UIViewController {
     // MARK: - Actions
 
     @IBAction func tapFetchAllPosts(_ sender: Any) {
-        NetworkManager<[PostInfo]>()
+        NetworkProvider<[PostInfo]>()
             .request(endpoint: Endpoint.fetchPosts) { [weak self] result in
                 switch result {
                 case let .success(data):
@@ -45,7 +45,7 @@ final class MainVC: UIViewController {
                 return
             }
 
-            NetworkManager<[CommentInfo]>()
+            NetworkProvider<[CommentInfo]>()
                 .request(endpoint: Endpoint.fetchCommentsWithPath(postId: id)) { [weak self] result in
                     switch result {
                     case let .success(data):
@@ -63,7 +63,7 @@ final class MainVC: UIViewController {
                 return
             }
 
-            NetworkManager<[CommentInfo]>()
+            NetworkProvider<[CommentInfo]>()
                 .request(endpoint: Endpoint.fetchCommentsWithParams(postId: id)) { [weak self] result in
                     switch result {
                     case let .success(data):
@@ -77,7 +77,7 @@ final class MainVC: UIViewController {
 
     @IBAction func tapUpdatePost(_ sender: Any) {
         postInfoAlert { postInfo in
-            NetworkManager<PostInfo>()
+            NetworkProvider<PostInfo>()
                 .request(endpoint: Endpoint.writePost(post: postInfo)) { [weak self] result in
                     switch result {
                     case let .success(data):
@@ -91,7 +91,7 @@ final class MainVC: UIViewController {
 
     @IBAction func tapUpdateTitle(_ sender: Any) {
         idTitleAlert { id, title in
-            NetworkManager<PostInfo>()
+            NetworkProvider<PostInfo>()
                 .request(endpoint: Endpoint.updateTitle(postId: id, title: title)) { [weak self] result in
                     switch result {
                     case let .success(data):
@@ -109,7 +109,7 @@ final class MainVC: UIViewController {
                 return
             }
 
-            NetworkManager<DeleteResponse>()
+            NetworkProvider<DeleteResponse>()
                 .request(endpoint: Endpoint.deletePost(postId: id)) { [weak self] result in
                     switch result {
                     case .success:

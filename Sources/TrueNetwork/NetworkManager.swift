@@ -1,5 +1,5 @@
 //
-//  NetworkManager.swift
+//  NetworkProvider.swift
 //  TrueNetwork
 //
 //  Created by 장재훈 on 2022/10/18.
@@ -7,8 +7,7 @@
 
 import Foundation
 
-@available(iOS 16.0, *)
-public final class NetworkManager<T: Codable> {
+public final class NetworkProvider<T: Codable> {
     let timeoutInterval: CGFloat
 
     public init(timeoutInterval: CGFloat = 5) {

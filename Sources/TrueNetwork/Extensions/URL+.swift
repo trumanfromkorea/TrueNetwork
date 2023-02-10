@@ -7,21 +7,17 @@
 
 import Foundation
 
-@available(iOS 16.0, *)
 extension URL {
-    func addPaths(_ paths: [String]) -> URL {
-        return paths.reduce(self) { $0.appending(path: $1) }
+    func addPaths(_ paths: [String]) -> URL? {
+        let urlString = absoluteString + "/" + paths.joined(separator: "/")
+
+        return .init(string: urlString)
     }
 
-    func addParameters(_ parameters: [String: Any]?) -> URL {
-        var url = self
+    func addParameters(_ parameters: [String: Any]?) -> URL? {
+        var components = URLComponents(url: self, resolvingAgainstBaseURL: true)
+        components?.queryItems = parameters?.compactMap { URLQueryItem(name: $0, value: "\($1)") }
 
-        let queryItems = parameters?.compactMap { URLQueryItem(name: $0, value: "\($1)") }
-
-        if let queryItems {
-            url.append(queryItems: queryItems)
-        }
-
-        return url
+        return components?.url
     }
 }

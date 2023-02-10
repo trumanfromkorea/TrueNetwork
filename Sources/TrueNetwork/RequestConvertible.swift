@@ -19,12 +19,11 @@ public protocol RequestConvertible {
     func request(timeoutInterval: CGFloat) -> URLRequest?
 }
 
-@available(iOS 16.0, *)
 public extension RequestConvertible {
     func request(timeoutInterval: CGFloat) -> URLRequest? {
         // paths, params
         let url = URL(string: baseUrl)?
-            .addPaths(paths)
+            .addPaths(paths)?
             .addParameters(parameters)
 
         guard let url else {
