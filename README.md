@@ -1,5 +1,4 @@
 # TrueNetwork
-- iOS 16.0 ~
 
 <img src="https://user-images.githubusercontent.com/55919701/208962188-ddea2d3a-08e1-4df2-9590-d0db9f948d30.gif" width="200">
 
