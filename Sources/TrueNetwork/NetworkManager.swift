@@ -7,14 +7,25 @@
 
 import Foundation
 
+/**
+ 네트워크 통신 기능을 제공하는 객체입니다. 응답을 처리하기 위해 `Codable` 프로토콜을 준수하는 제네릭 타입을 이용합니다.
+ */
 public final class NetworkProvider<T: Codable> {
+    /// 서버 요청 기한입니다.
     let timeoutInterval: CGFloat
 
+    /// 생성 시 서버 요청 기한을 입력하지 않을 시 기본값은 5초입니다.
     public init(timeoutInterval: CGFloat = 5) {
         self.timeoutInterval = timeoutInterval
     }
 
-    // Request 전송
+    /**
+     네트워크 요청을 전송합니다.
+     
+     - Parameters:
+        - endpoint: 네트워크 요청에 사용되는 요소들입니다.
+        - completion: 응답이 도착한 후 이를 처리할 수 있는 closure 구문입니다.
+     */
     public func request(
         endpoint: RequestConvertible,
         completion: ((Result<T, NetworkError>) -> Void)?
@@ -61,7 +72,14 @@ public final class NetworkProvider<T: Codable> {
         task.resume()
     }
 
+    /**
+     서버로부터 도착한 데이터에서 예외 발생 시 해당 데이터를 json 파일로 기기 내에 저장합니다.
+     
+     - Parameters:
+        - data: 예외가 발생한 데이터입니다.
+     */
     private func writeExceptionData(data: Data) {
+        // Documents 폴더에 저장
         guard let jsonString = String(data: data, encoding: .utf8),
               let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
             return

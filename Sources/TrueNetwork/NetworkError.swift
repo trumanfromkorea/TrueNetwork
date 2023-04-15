@@ -7,15 +7,24 @@
 
 import Foundation
 
-// 네트워크 에러
+/**
+ 요청 중 발생하는 에러를 나타낼 수 있는 case 들입니다.
+ */
 public enum NetworkError: LocalizedError {
+    /// 잘못된 요청, 400 번대 에러
     case invalidRequest
+    /// 유효하지 않은 응답
     case invalidResponse
+    /// 서버로부터 받아온 데이터가 유효하지 않은 경우
     case invalidData
+    /// 서버로부터 받아온 데이터와 매핑 타입이 일치하지 않는 경우
     case invalidType
+    /// 서버 내부 오류, 500 번대 에러
     case serverError
+    /// 네트워크 통신에 실패한 경우
     case networkFailed
 
+    /// 모든 에러 case 에 대한 설명입니다.
     public var errorDescription: String {
         switch self {
         case .invalidRequest:
@@ -33,6 +42,13 @@ public enum NetworkError: LocalizedError {
         }
     }
 
+    /**
+     네트워크 응답 코드를 이용해 어떤 종류의 에러인지 판단합니다.
+     
+     - Parameters:
+        - statusCode: 네트워크 응답 코드입니다.
+     - Returns: 응답 코드에 대응하는 에러를 리턴합니다.
+     */
     static func judgeStatus(by statusCode: Int) -> NetworkError {
         if (400 ..< 500).contains(statusCode) {
             return .invalidRequest

@@ -7,7 +7,9 @@
 
 import Foundation
 
-// HTTPMethod 케이스
+/**
+ 요청에 사용되는 HTTPMethod 들의 case 입니다.
+ */
 public enum HTTPMethod {
     case get
     case post
